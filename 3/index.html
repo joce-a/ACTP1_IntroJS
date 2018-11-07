@@ -1,22 +1,24 @@
 <!--
   Sin modificar el HTML debes escribir los selectores que se necesitan para cada elemento pedido.
 
-  Seleccionar el H1 y cambiar el color de texto a rojo
-  Seleccionar la sección 1 (section-1) y agregar el color de fondo amarillo
-  Seleccionar el elemento con clase counter e incrementar en 10 su valor
-  Al hacerle click al elemento con id row-3 se debe agregar el color de fondo gris y además debe tener una transición de 1 segundo
-  Seleccionar el h1 dentro de la sección y duplicar su font-size
-  Seleccionar el último row dentro de la tabla (sin utilizar el id, puesto que el número de elementos podría cambiar) y agregar color de fondo rojo
+  1**Seleccionar el H1 y cambiar el color de texto a rojo
+  2**Seleccionar la sección 1 (section-1) y agregar el color de fondo amarillo
+  3**Seleccionar el elemento con clase counter e incrementar en 10 su valor
+  4**Al hacerle click al elemento con id row-3 se debe agregar el color de fondo gris y además debe tener una transición de 1 segundo
+  5**Seleccionar el h1 dentro de la sección y duplicar su font-size
+  6**Seleccionar el último row dentro de la tabla (sin utilizar el id, puesto que el número de elementos podría cambiar) y agregar color de fondo rojo
 -->
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Ejercicio 3</title>
   </head>
   <body>
+
     <h1> Hey !! </h1>
+
     <section class="section-1">
       <h1> Hey </h1>
       <span class="counter"> 101 </span>
@@ -62,5 +64,32 @@
 
       </fieldset>
     </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!-- js -->
+      <script>
+        $(document).ready(function(){
+          //Ejercicio-1
+          $("h1").css("color", "red");
+          //Ejercicio-2
+          $(".section-1").css("background-color", "yellow");
+          //Ejercicio-3
+          var counter = $(".counter").text();
+          counter = parseInt(counter);
+          counter = counter + 10;
+          $(".counter").text(counter);
+          console.log(counter);
+          //Ejercicio-4
+          $("#row-3").click(function(){
+            $(this).css("background-color", "grey");
+          });
+          //Ejercicio-5
+          $(".section-1 h1").css("font-size", "4em");
+          //Ejercicio-6
+          $("#row-4").addClass("red-row");
+          $(".red-row").css("background-color", "red");
+        })
+      </script>
+    <!-- /.js -->
   </body>
 </html>
